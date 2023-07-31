@@ -2,11 +2,13 @@ public class Envio implements IEnvio {
 
   String tipo;
   Integer precio;
-  Integer PrecioBusqueda;
+  Integer precioBusqueda = 100;
+  Integer tiempo;
 
-  Envio(String tipo, Integer precio) {
+  Envio(String tipo, Integer precio, Integer tiempo) {
     this.tipo = tipo;
     this.precio = precio;
+    this.tiempo = tiempo;
   }
 
   String getTipoEnvio() {
@@ -30,7 +32,7 @@ public class Envio implements IEnvio {
   @Override
   public boolean permitidoEnAvion() {
     if ("Internacional".equals(this.tipo)) {
-      if (this.precio < PrecioBusqueda) {
+      if (this.precio < precioBusqueda) {
         return true;
       } else {
         return false;
