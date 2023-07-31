@@ -2,6 +2,7 @@ public class Envio implements IEnvio {
 
   String tipo;
   Integer precio;
+  Integer PrecioBusqueda;
 
   Envio(String tipo, Integer precio) {
     this.tipo = tipo;
@@ -28,8 +29,8 @@ public class Envio implements IEnvio {
 
   @Override
   public boolean permitidoEnAvion() {
-    if (this.tipo.equals("Internacional")) {
-      if (this.precio < 100) {
+    if ("Internacional".equals(this.tipo)) {
+      if (this.precio < PrecioBusqueda) {
         return true;
       } else {
         return false;
