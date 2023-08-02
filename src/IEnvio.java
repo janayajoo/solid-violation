@@ -4,5 +4,5 @@ public interface IEnvio {
 
   void rastrearPaquete();
 
-  boolean permitidoEnAvion();
+  String permitidoEnAvion();
 }

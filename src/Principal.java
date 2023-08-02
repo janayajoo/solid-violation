@@ -5,12 +5,19 @@ public class  Principal {
         new Envio("Municipal",5000, 12),
         new Envio("Internacional",25000, 190)
     };
-    imprimirTiempoDeEnvio(envios);
+    ImprimirTiempoDeEnvio imprimir = new ImprimirTiempoDeEnvio();
+    imprimir.imprimirTiempoDeEnvio(envios);
   }
 
-  public static void imprimirTiempoDeEnvio(Envio[] envios){
-    for (Envio coche : envios) {
-      System.out.println(coche.tipo + ": tiempo envio " + coche.tiempo + "horas");
+  public static class ImprimirTiempoDeEnvio{
+    public void imprimirTiempoDeEnvio(Envio[] envios){
+      for (Envio envio : envios) {
+        if("Internacional".equals(envio.tipo)){
+          System.out.println(envio.permitidoEnAvion());
+        } else {
+          System.out.println(envio.tipo + ": tiempo envio " + envio.tiempo + " horas y precio de $" + envio.getPrecio());
+        }
+      }
     }
   }
 }

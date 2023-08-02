@@ -11,6 +11,10 @@ public class Envio implements IEnvio {
     this.tiempo = tiempo;
   }
 
+  public int getPrecio() {
+    return precio;
+  }
+
   String getTipoEnvio() {
     return this.tipo;
   }
@@ -30,14 +34,11 @@ public class Envio implements IEnvio {
   }
 
   @Override
-  public boolean permitidoEnAvion() {
-    if ("Internacional".equals(this.tipo)) {
-      if (this.precio < precioBusqueda) {
-        return true;
-      } else {
-        return false;
-      }
+  public String permitidoEnAvion() {
+    if ("Internacional".equals(this.tipo) && this.precio < precioBusqueda) {
+      return this.tipo + ": tiempo envio " + this.tiempo + " horas y precio de $" + this.getPrecio();
+    } else {
+      return "No permitido en avion porque el precio es mayor a $" + this.precioBusqueda;
     }
-    throw new IllegalArgumentException("no es posible cargar en avion un envio que no sea internacional");
   }
 }
