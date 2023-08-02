@@ -3,7 +3,7 @@ public class  Principal {
   public static void main(String[] args) {
     Envio[] envios = {
         new Envio("Municipal",5000, 12),
-        new Envio("Internacional",25000, 190)
+        new Envio("Internacional",90, 190)
     };
     ImprimirTiempoDeEnvio imprimir = new ImprimirTiempoDeEnvio();
     imprimir.imprimirTiempoDeEnvio(envios);
