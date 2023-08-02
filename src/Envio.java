@@ -36,9 +36,11 @@ public class Envio implements IEnvio {
   @Override
   public String permitidoEnAvion() {
     if ("Internacional".equals(this.tipo) && this.precio < precioBusqueda) {
-      return this.tipo + ": tiempo envio " + this.tiempo + " horas y precio de $" + this.getPrecio();
-    } else {
+      return this.tipo + ": tiempo envio " + this.tiempo + " horas, precio de $" + this.getPrecio() + " y permitido en el avion";
+    } else if ("Internacional".equals(this.tipo) && this.precio > precioBusqueda){
       return "No permitido en avion porque el precio es mayor a $" + this.precioBusqueda;
+    } else {
+      return this.tipo + ": tiempo envio " + this.tiempo + " horas y precio de $" + this.getPrecio();
     }
   }
 }

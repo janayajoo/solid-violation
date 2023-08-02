@@ -12,11 +12,7 @@ public class  Principal {
   public static class ImprimirTiempoDeEnvio{
     public void imprimirTiempoDeEnvio(Envio[] envios){
       for (Envio envio : envios) {
-        if("Internacional".equals(envio.tipo)){
-          System.out.println(envio.permitidoEnAvion());
-        } else {
-          System.out.println(envio.tipo + ": tiempo envio " + envio.tiempo + " horas y precio de $" + envio.getPrecio());
-        }
+        System.out.println(envio.permitidoEnAvion());
       }
     }
   }
